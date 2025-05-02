@@ -9,7 +9,8 @@ function useHistoricalData(communicationMethod) {
     const fetchHistoricalData = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch('http://localhost:5000/api/data/historical');
+        // const response = await fetch('http://localhost:5000/api/data/historical');
+        const response = await fetch('https://real-time-dashboard-884u.onrender.com');
         if (!response.ok) {
           throw new Error('Failed to fetch historical data');
         }
