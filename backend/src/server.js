@@ -7,9 +7,12 @@ const dataRoutes = require('./routes/dataRoutes');
 const errorHandler = require('./middleware/errorHandler');
 const websocketHandler = require('./websocket/websocketHandler');
 
+
 // Create Express app
 const app = express();
 const server = http.createServer(app);
+
+const cors = require('cors');
 
 // Configure middleware
 app.use(cors());
@@ -30,11 +33,12 @@ app.use(errorHandler);
 const wss = new WebSocket.Server({ server });
 websocketHandler(wss);
 
-// Start server
-const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => {
-  logger.info(`Server running on port ${PORT}`);
-});
+
+const corsOptions = {
+  origin: ['http://localhost:3000', 'https://your-frontend.vercel.app'],
+  credentials: true,
+};
+
 
 // Handle graceful shutdown
 process.on('SIGTERM', () => {
@@ -43,6 +47,14 @@ process.on('SIGTERM', () => {
     logger.info('HTTP server closed');
     process.exit(0);
   });
+});
+
+app.use(cors(corsOptions));
+
+// Start server
+const PORT = process.env.PORT || 5000;
+server.listen(PORT, () => {
+  logger.info(`Server running on port ${PORT}`);
 });
 
 module.exports = server;
