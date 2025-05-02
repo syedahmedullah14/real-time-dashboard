@@ -43,7 +43,7 @@ function useHistoricalData() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const apiUrl = process.env.REACT_APP_API_BASE_URL + '/api/data/historical';
+  const apiUrl = process.env.REACT_APP_API_URL + '/api/data/historical';
 
   useEffect(() => {
     const fetchHistoricalData = async () => {
