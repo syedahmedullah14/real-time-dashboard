@@ -130,7 +130,7 @@ function RealTimeData({ communicationMethod }) {
 
       const fetchData = async () => {
         try {
-          const response = await fetch(`${apiBaseUrl}/api/data/current`);
+          const response = await fetch(`${apiBaseUrl}`);
           if (!response.ok) {
             throw new Error('Failed to fetch data');
           }
