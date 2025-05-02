@@ -60,7 +60,8 @@ function useWebSocket(enabled) {
   const [connectionStatus, setConnectionStatus] = useState('closed');
   const [socket, setSocket] = useState(null);
 
-  const wsUrl = process.env.REACT_APP_WS_URL;
+  // const wsUrl = process.env.REACT_APP_WS_URL || 'ws://localhost:5000';
+  const wsUrl = process.env.REACT_APP_WS_URL || 'ws://localhost:5000';
 
   useEffect(() => {
     if (!enabled) {
