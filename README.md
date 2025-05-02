@@ -4,27 +4,43 @@ A full-stack application featuring a responsive dashboard that displays data thr
 
 ## Features
 
-- Real-time data display with WebSocket
-- Historical data display from REST API
-- Toggle between communication methods
-- Responsive design for mobile and desktop
-- Dockerized deployment
+- Real-time data display using WebSocket
+- Historical data retrieval using REST API (polling every 30 seconds)
+- Toggle between WebSocket and Polling modes
+- Responsive design for both desktop and mobile
+- Dockerized for local development and deployment
 
-## Tech Stack
+---
+
+## 🛠 Tech Stack
 
 - **Frontend**: React.js, Tailwind CSS
-- **Backend**: Express.js, WebSocket
-- **Deployment**: Docker, Docker Compose
+- **Backend**: Node.js (Express.js) + WebSocket
+- **Deployment**: Docker, Docker Compose, Vercel (frontend), Render (backend)
 
-## Getting Started
+---
 
-### Prerequisites
+## 🔗 Live Demo
 
-- Docker and Docker Compose installed on your system
+- **Frontend (Vercel)**: [https://real-time-dashboard-dea3-6wox4adpr.vercel.app](https://real-time-dashboard-dea3-6wox4adpr.vercel.app)
 
-### Running with Docker Compose
+> ⚙️ The frontend is deployed on **Vercel**, and it fetches data from the backend service hosted on **Render** (not publicly linked here). Make sure to configure environment variables in Vercel accordingly.
 
-1. Clone this repository
-   ```bash
-   git clone https://github.com/syedahmedullah14/real-time-dashboard.git
-   cd real-time-dashboard
+---
+
+## 🧑‍💻 Local Development (via Docker Compose)
+
+### ✅ Prerequisites
+
+- [Docker](https://www.docker.com/) installed
+- [Docker Compose](https://docs.docker.com/compose/) installed
+
+### 🚀 Run Locally
+
+```bash
+# Clone the repository
+git clone https://github.com/syedahmedullah14/real-time-dashboard.git
+cd real-time-dashboard
+
+# Start the frontend and backend services
+docker-compose up --build
