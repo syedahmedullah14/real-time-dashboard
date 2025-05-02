@@ -112,7 +112,7 @@ function RealTimeData({ communicationMethod }) {
   const [error, setError] = useState(null);
 
   // const apiBaseUrl = process.env.REACT_APP_API_URL + 'api/data/current' || 'http://localhost:5000';
-  const apiBaseUrl = 'https://real-time-dashboard-884u.onrender.com/api/data/current' || 'http://localhost:5000';
+  const apiBaseUrl = 'https://real-time-dashboard-884u.onrender.com/api/data/current';
   const wsUrl = process.env.REACT_APP_WS_URL || 'ws://localhost:5000';
 
   // WebSocket connection
