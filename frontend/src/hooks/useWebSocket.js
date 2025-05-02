@@ -53,29 +53,80 @@
 
 // export default useWebSocket;
 
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 
-function useWebSocket(enabled) {
+// function useWebSocket(enabled) {
+//   const [lastMessage, setLastMessage] = useState(null);
+//   const [connectionStatus, setConnectionStatus] = useState('closed');
+//   const [socket, setSocket] = useState(null);
+
+//   // const wsUrl = process.env.REACT_APP_WS_URL || 'ws://localhost:5000';
+//   const wsUrl = process.env.REACT_APP_WS_URL || 'ws://localhost:5000';
+
+//   useEffect(() => {
+//     if (!enabled) {
+//       if (socket) {
+//         socket.close();
+//         setSocket(null);
+//         setConnectionStatus('closed');
+//       }
+//       return;
+//     }
+
+//     setConnectionStatus('connecting');
+//     const ws = new WebSocket(wsUrl);
+//     setSocket(ws);
+
+//     ws.onopen = () => {
+//       setConnectionStatus('open');
+//       console.log('WebSocket connected');
+//     };
+
+//     ws.onmessage = (event) => {
+//       setLastMessage(event.data);
+//     };
+
+//     ws.onerror = (error) => {
+//       console.error('WebSocket error:', error);
+//       setConnectionStatus('error');
+//     };
+
+//     ws.onclose = () => {
+//       setConnectionStatus('closed');
+//       console.log('WebSocket closed');
+//     };
+
+//     return () => {
+//       ws.close();
+//     };
+//   }, [enabled, wsUrl]);
+
+//   return { lastMessage, connectionStatus };
+// }
+
+// export default useWebSocket;
+
+import { useState, useEffect, useRef } from 'react';
+
+function useWebSocket(enabled, url) {
   const [lastMessage, setLastMessage] = useState(null);
   const [connectionStatus, setConnectionStatus] = useState('closed');
-  const [socket, setSocket] = useState(null);
-
-  // const wsUrl = process.env.REACT_APP_WS_URL || 'ws://localhost:5000';
-  const wsUrl = process.env.REACT_APP_WS_URL || 'ws://localhost:5000';
+  const wsRef = useRef(null);
 
   useEffect(() => {
     if (!enabled) {
-      if (socket) {
-        socket.close();
-        setSocket(null);
+      if (wsRef.current) {
+        wsRef.current.close();
+        wsRef.current = null;
         setConnectionStatus('closed');
       }
       return;
     }
 
     setConnectionStatus('connecting');
-    const ws = new WebSocket(wsUrl);
-    setSocket(ws);
+
+    const ws = new WebSocket(url);
+    wsRef.current = ws;
 
     ws.onopen = () => {
       setConnectionStatus('open');
@@ -97,9 +148,12 @@ function useWebSocket(enabled) {
     };
 
     return () => {
-      ws.close();
+      if (wsRef.current) {
+        wsRef.current.close();
+        wsRef.current = null;
+      }
     };
-  }, [enabled, wsUrl]);
+  }, [enabled, url]);
 
   return { lastMessage, connectionStatus };
 }
