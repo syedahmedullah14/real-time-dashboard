@@ -111,7 +111,7 @@ function RealTimeData({ communicationMethod }) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const apiBaseUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+  const apiBaseUrl = process.env.REACT_APP_API_URL + 'api/data/current' || 'http://localhost:5000';
   const wsUrl = process.env.REACT_APP_WS_URL || 'ws://localhost:5000';
 
   // WebSocket connection
