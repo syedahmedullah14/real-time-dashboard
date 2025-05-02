@@ -26,5 +26,5 @@ A full-stack application featuring a responsive dashboard that displays data thr
 
 1. Clone this repository
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/syedahmedullah14/real-time-dashboard.git
    cd real-time-dashboard
