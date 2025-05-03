@@ -22,7 +22,7 @@ A full-stack application featuring a responsive dashboard that displays data thr
 
 ## 🔗 Live Demo
 
-- **Frontend (Vercel)**: [https://real-time-dashboard-dea3-6wox4adpr.vercel.app](https://real-time-dashboard-dea3-6wox4adpr.vercel.app)
+- **Frontend (Vercel)**: [https://real-time-dashboard-git-102c6c-syed-ahmedullah-jasers-projects.vercel.app/](https://real-time-dashboard-git-102c6c-syed-ahmedullah-jasers-projects.vercel.app/)
 
 > ⚙️ The frontend is deployed on **Vercel**, and it fetches data from the backend service hosted on **Render** (not publicly linked here). Make sure to configure environment variables in Vercel accordingly.
 
