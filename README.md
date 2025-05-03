@@ -28,7 +28,7 @@ A full-stack application featuring a responsive dashboard that displays data thr
 
 
 ---
-- **Backend (Rebder)**: [https://real-time-dashboard-884u.onrender.com/api/data/historical](https://real-time-dashboard-884u.onrender.com/api/data/historical)
+- **Backend (Render)**: [https://real-time-dashboard-884u.onrender.com/api/data/historical](https://real-time-dashboard-884u.onrender.com/api/data/historical)
 
 > ⚙️ The backend is deployed on **Render**
 
