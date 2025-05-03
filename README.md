@@ -27,6 +27,7 @@ A full-stack application featuring a responsive dashboard that displays data thr
 > ⚙️ The frontend is deployed on **Vercel**, and it fetches data from the backend service hosted on **Render** (not publicly linked here). Make sure to configure environment variables in Vercel accordingly.
 
 ---
+# Note: Simply reload the page if it shows "no data available" in the historical data. 
 
 ## 🧑‍💻 Local Development (via Docker Compose)
 
