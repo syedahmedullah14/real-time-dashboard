@@ -24,10 +24,15 @@ A full-stack application featuring a responsive dashboard that displays data thr
 
 - **Frontend (Vercel)**: [https://real-time-dashboard-git-102c6c-syed-ahmedullah-jasers-projects.vercel.app/](https://real-time-dashboard-git-102c6c-syed-ahmedullah-jasers-projects.vercel.app/)
 
-> ⚙️ The frontend is deployed on **Vercel**, and it fetches data from the backend service hosted on **Render** (not publicly linked here). Make sure to configure environment variables in Vercel accordingly.
+> ⚙️ The frontend is deployed on **Vercel**, and it fetches data from the backend service hosted on **Render** (not publicly linked here). Make sure to configure environment variables in Vercel accordingly. Note: Simply reload the page if it shows "no data available" in the historical data.
+
 
 ---
-# Note: Simply reload the page if it shows "no data available" in the historical data. 
+- **Backend (Rebder)**: [https://real-time-dashboard-884u.onrender.com/api/data/historical](https://real-time-dashboard-884u.onrender.com/api/data/historical)
+
+> ⚙️ The backend is deployed on **Render**
+
+---
 
 ## 🧑‍💻 Local Development (via Docker Compose)
 
